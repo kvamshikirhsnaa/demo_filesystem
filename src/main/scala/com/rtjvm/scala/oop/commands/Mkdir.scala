@@ -40,7 +40,10 @@ class Mkdir(val name: String) extends Command {
 
        */
 
-      if (path.isEmpty) currDir.addEntry(newEntry)
+      if (path.isEmpty) {
+        println("path is empty")
+        currDir.addEntry(newEntry)
+      }
       else {
         /*
           /a/b

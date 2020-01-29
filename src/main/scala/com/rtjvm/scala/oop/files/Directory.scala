@@ -15,6 +15,7 @@ class Directory(override val parentPath: String, override val name:String, val c
   def getAllFoldersInPath: List[String] = {
     // path => "/a/b/c/d"
     // path.substring(1) => "a/b/c/d".split(Directory.SEPARATOR).toList => List(a,b,c,d)
+    println(path)
     path.substring(1).split(Directory.SEPARATOR).toList.filter(x => x.nonEmpty)
   }
 
