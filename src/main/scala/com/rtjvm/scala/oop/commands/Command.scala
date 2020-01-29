@@ -31,7 +31,6 @@ object Command {
     }
     else if (LS.equals(tokens(0))) {
       new Ls
-
     }
     else new UnknownCommand
 
