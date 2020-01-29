@@ -32,14 +32,14 @@ class Directory(override val parentPath: String, override val name:String, val c
     @tailrec
     def findEntryRec(name: String, contentList: List[DirEntry]): DirEntry = {
       if (contentList.isEmpty) null
-      else if (contentList.head.name.equals(entryName)) contentList.head
+      else if (contentList.head.name.equals(name)) contentList.head
       else findEntryRec(name, contentList.tail)
     }
     findEntryRec(entryName, contents)
   }
 
   def replaceEntry(entryName: String, newEntry: DirEntry): Directory = {
-    new Directory(parentPath, name, contents.filter(x => (x != name)) :+ newEntry)
+    new Directory(parentPath, name, contents.filter(x => x.name != entryName) :+ newEntry)
   }
 
 
